@@ -1,5 +1,7 @@
 package game;
 
+import game.shaderwriter.ShaderWriter;
+
 public class Game {
 	
 	public Game()
@@ -23,7 +25,12 @@ public class Game {
 
 	private void close() {
 		Window.close();
-		System.out.println("CLOSED");
+		
+		ShaderWriter sw = new ShaderWriter();
+		sw.addUniform("mat4", "projectionMatrix");
+		sw.addUniform("mat4", "viewMatrix");
+		sw.addUniform("mat4", "modelMatrix");
+		System.out.println(sw.compile());
 	}
 
 	public static void main(String[] args)
