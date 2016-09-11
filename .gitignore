@@ -18,3 +18,5 @@ hs_err_pid*
 lib/src.zip
 *.so
 *.dylib
+src/stall.png
+src/stall.obj
